@@ -1,0 +1,67 @@
+<!doctype html>
+<!-- Source of assets/banner.png (1280 × 640, also the GitHub social preview).
+     Render: Chrome --headless=new --window-size=1280,640 --screenshot=banner.png file://…/assets/banner.html -->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body { width: 1280px; height: 640px; overflow: hidden; color: #fff;
+         font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+         background: radial-gradient(700px 420px at 12% 18%, rgba(109, 91, 255, .55), transparent 70%),
+                     radial-gradient(620px 420px at 92% 95%, rgba(224, 69, 123, .45), transparent 70%),
+                     linear-gradient(135deg, #0d0a1c 0%, #171033 55%, #1d0f2b 100%); }
+  .left { position: absolute; left: 72px; top: 92px; width: 520px; }
+  .icon { width: 132px; height: 132px; margin-left: -14px; }
+  h1 { font-size: 92px; font-weight: 800; letter-spacing: -0.035em; line-height: 1; margin-top: 18px; }
+  p { font-size: 25px; line-height: 1.38; color: rgba(255, 255, 255, .78); margin-top: 18px; }
+  p b { color: #fff; font-weight: 600; }
+  .pills { display: flex; gap: 10px; margin-top: 30px; flex-wrap: wrap; }
+  .pill { font-size: 15px; font-weight: 600; padding: 8px 14px; border-radius: 999px;
+          background: rgba(255, 255, 255, .09); border: 1px solid rgba(255, 255, 255, .16); }
+
+  .screen { position: absolute; left: 640px; top: 96px; width: 580px; height: 372px; border-radius: 18px; overflow: hidden;
+            background: radial-gradient(420px 260px at 20% 10%, #8f7cf2, transparent 70%),
+                        radial-gradient(380px 300px at 95% 95%, #f29a6b, transparent 65%),
+                        linear-gradient(135deg, #3a3f9e, #7b4fb8 55%, #c46a8a);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, .55), 0 0 0 1px rgba(255, 255, 255, .12); }
+  .bar { height: 18px; background: rgba(255, 255, 255, .28); }
+  .win { position: absolute; background: #fbfbfd; border-radius: 9px; box-shadow: 0 10px 26px rgba(0, 0, 0, .3); overflow: hidden; }
+  .win .t { height: 20px; background: #eeeef2; display: flex; gap: 5px; align-items: center; padding-left: 9px; }
+  .win .t i { width: 7px; height: 7px; border-radius: 50%; }
+  .win .t i:nth-child(1) { background: #ff5f57; } .win .t i:nth-child(2) { background: #febc2e; } .win .t i:nth-child(3) { background: #28c840; }
+  .win .l { height: 7px; border-radius: 4px; background: #e6e5ee; margin: 9px 12px 0; }
+  .preview { position: absolute; border: 2px solid #3d8bff; background: rgba(61, 139, 255, .22); border-radius: 10px; }
+  .panel { position: absolute; left: 786px; top: 300px; }
+</style>
+</head>
+<body>
+  <div class="left">
+    <img class="icon" src="icon.png" alt="">
+    <h1>Maestro</h1>
+    <p>Window management for macOS. <b>Drag across a grid</b> or <b>hit a shortcut</b> and every window lands exactly where you want it.</p>
+    <div class="pills">
+      <span class="pill">Free &amp; open source</span>
+      <span class="pill">macOS 13+</span>
+      <span class="pill">Apple Silicon &amp; Intel</span>
+    </div>
+  </div>
+
+  <div class="screen">
+    <div class="bar"></div>
+    <!-- right column already tiled -->
+    <div class="win" style="left: 392px; top: 26px; width: 180px; height: 165px">
+      <div class="t"><i></i><i></i><i></i></div><div class="l" style="width:70%"></div><div class="l" style="width:50%"></div>
+    </div>
+    <div class="win" style="left: 392px; top: 199px; width: 180px; height: 165px">
+      <div class="t"><i></i><i></i><i></i></div><div class="l" style="width:55%"></div><div class="l" style="width:75%"></div>
+    </div>
+    <!-- the focused window, about to take the left two thirds shown by the preview -->
+    <div class="win" style="left: 150px; top: 92px; width: 210px; height: 150px; opacity: .92">
+      <div class="t"><i></i><i></i><i></i></div><div class="l" style="width:60%"></div><div class="l"></div><div class="l" style="width:80%"></div>
+    </div>
+    <div class="preview" style="left: 8px; top: 26px; width: 376px; height: 338px"></div>
+  </div>
+  <img class="panel" src="screenshots/grid-panel.png" alt="">
+</body>
+</html>

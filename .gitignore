@@ -1,0 +1,6 @@
+.build/
+build/
+.DS_Store
+.swiftpm/
+# Private research notes, not for publication.
+docs/reverse-engineering/
