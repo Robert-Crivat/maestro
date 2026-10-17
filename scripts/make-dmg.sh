@@ -18,5 +18,6 @@ SetFile -a C "$STAGE" 2>/dev/null || true
 
 rm -f "$DMG"
 hdiutil create -volname "Maestro $VERSION" -srcfolder "$STAGE" -ov -format UDZO -fs HFS+ "$DMG" >/dev/null
-shasum -a 256 "$DMG" | tee "$DMG.sha256"
+# Bare file name in the checksum file, so `shasum -c` works next to the downloaded DMG.
+(cd build && shasum -a 256 "Maestro-$VERSION.dmg" | tee "Maestro-$VERSION.dmg.sha256")
 echo "ok: $DMG"
